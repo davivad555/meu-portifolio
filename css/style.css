@@ -161,6 +161,10 @@ nav ul li:hover::after{
 
 /*mobile*/
 @media screen and (width < 767px){
+    .section--default{
+        padding: 1rem;
+        background: var(--primary-color);
+    }
     nav{
         display: none;
     }
@@ -182,8 +186,12 @@ nav ul li:hover::after{
         margin-bottom: 1.3rem;
         font-size: 1.2rem;
     }
+    .hero--right{
+        margin: auto;
+        margin-bottom: 2rem;
+    }
     .hero--right img{
-        width: 25rem;
+        width: 16rem;
     }
     .section--techs{
         flex-direction: column;
@@ -198,7 +206,6 @@ nav ul li:hover::after{
         object-fit: fill;
     }
     .techs--item{
-     width: 7rem;
+     width: 5rem;
     }
-  
 }
