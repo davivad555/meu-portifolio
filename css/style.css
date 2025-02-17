@@ -17,7 +17,6 @@ html {
  --font-color1: #fff;
     /*verde: #8DFF00*/
 }
-
 .center{
     display: flex;
     justify-content: center;
@@ -38,6 +37,7 @@ header {
 nav{
     font-size: 1.8rem;
     color: var(--font-color1);
+    transition: width 0.3 ease;
 }
 nav ul{
     list-style: none;
@@ -46,6 +46,7 @@ nav ul{
 }
 nav ul li{
     margin-right: 2rem;
+    top: 2.5rem;
     position: relative;
 }
 nav ul li::after{
@@ -56,16 +57,42 @@ nav ul li::after{
     left: 0;
     bottom: 0;
     background: var(--secundary-color1);
-    transition: 0.3s ease;
 }
 nav ul li:hover::after{ 
    width: 100%; 
 }
-.i-menu{
-    font-size: 3rem !important;
-    color: #e9e9e9;
-    display: none !important;
+.icone--toggle{
+    padding: 2px;
+    margin-right: 10px;
+   z-index: 99;
+   display: none;
 }
+.icone--toggle .menu{
+    display: block;
+}
+.icone--toggle .menu div{
+    width: 30px;
+    height: 5px;
+    margin-bottom: 5px;
+    background: #fff;
+}
+.icone--toggle .close{
+  display: none;
+}
+.icone--toggle .close div{
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    height: 5px;
+    background: #fff;
+}
+.icone--toggle .close div:nth-child(1){
+    transform: rotate(48deg);
+}
+.icone--toggle .close div:nth-child(2){
+    transform: rotate(-47deg);
+}
+
 .hero{
     display: flex;
     gap: 6rem;
@@ -166,11 +193,27 @@ nav ul li:hover::after{
         background: var(--primary-color);
     }
     nav{
-        display: none;
+        position: absolute;    
+        top: 0rem;
+        width: 0vw;
+        height: 100vh;
+        display: block;
+        background-color: rgba(22, 207, 22, 0.9);
+        transition: 0.5s ease;
+        z-index: 98;
+        overflow-y: hidden;
     }
-    .i-menu{
-        display: flex !important;
+    nav ul{
+       flex-direction: column; 
     }
+    nav ul li{
+        width: 10rem;
+        margin-right: 0.5rem;
+    }
+    .icone--toggle{
+        display: block;
+    }
+
     .hero{
         flex-direction: column;
     }
