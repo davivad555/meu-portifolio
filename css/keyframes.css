@@ -1,0 +1,15 @@
+/*icon linkedin fadeInColor*/
+@keyframes fadeInColorBlueSky{
+    to{
+     background: #007ab9;
+     filter: invert(0%)
+    }
+}
+/*icon github fadeInColorWhite*/
+@keyframes fadeInColorWhite{
+
+    to{
+     background: #fff;
+     filter: invert(0%)
+    }
+}

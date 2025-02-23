@@ -57,6 +57,7 @@ nav ul li::after{
     left: 0;
     bottom: 0;
     background: var(--secundary-color1);
+    transition: width 0.3 ease;
 }
 nav ul li:hover::after{ 
    width: 100%; 
@@ -133,15 +134,41 @@ nav ul li:hover::after{
     flex: 2;
 }
 
-.hero--right img{
+.hero--right .myphoto{
     width: 28rem;
     filter: drop-shadow(-20px 20px var(--secundary-color2)) grayscale(90%); 
 }
+.area-icon{
+    display: flex;
+    margin-top: 1.8rem;
+    
+    
+}
+.area-icon--social {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 1rem;
+    background: var(--secundary-color2);
+    border-radius: 100%;
+    padding: 0.5rem;
+    filter: invert(10%)
+}
+.area-icon--social:nth-child(1):hover{
+    
+    animation: fadeInColorWhite 1s ease-out forwards;
+}
+.area-icon--social:nth-child(2):hover{
+    animation: fadeInColorBlueSky 1s ease-out forwards;
+}
+.area-icon--social img{
+    width: 100%;   
+}
 .section--techs{
     display: flex;
-    gap: 30px;
+    gap: 3rem;
+    padding: auto;
 }
-.techs{
+.area-techs{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 52rem;
@@ -149,14 +176,16 @@ nav ul li:hover::after{
     border-radius: 20px;
     padding: 2rem;
 }
-.techs--item img{
+.area-techs--item img{
     width: 100%;
-    object-fit: fill;
+    filter: saturate(15%);
+}   .area-techs--item img:hover{
+       filter: saturate(100%); 
 }
-.techs--item{
+.area-techs--item{
  width: 10rem;
 }
-.techs--item p{
+.area-techs--item p{
     text-align: center;
     margin-bottom: 0.4rem;
     font-size: 1.2rem;
@@ -198,7 +227,7 @@ nav ul li:hover::after{
         width: 0vw;
         height: 100vh;
         display: block;
-        background-color: rgba(22, 207, 22, 0.9);
+        background-color: rgba(0, 0, 0, 0.9);
         transition: 0.5s ease;
         z-index: 98;
         overflow-y: hidden;
@@ -233,22 +262,28 @@ nav ul li:hover::after{
         margin: auto;
         margin-bottom: 2rem;
     }
-    .hero--right img{
+    .hero--right .myphoto{
         width: 16rem;
     }
     .section--techs{
         flex-direction: column;
     }
-    .techs{
-        display: grid;
+    .area-techs{
+        width: 100%;
         grid-template-columns: 1fr 1fr;
         border-radius: 20px;
+        gap: auto;
     }
-    .techs--item img{
+    .area-techs--item img{
         width: 100%;
-        object-fit: fill;
     }
-    .techs--item{
-     width: 5rem;
+    .area-techs--item{
+     width: 100%;
+     padding: auto;
     }
+    .area-icon--social {
+    width: 2.5rem;
+    height: 2.5rem;
+  
+}
 }
