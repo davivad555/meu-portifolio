@@ -57,7 +57,7 @@ nav ul li::after{
     left: 0;
     bottom: 0;
     background: var(--secundary-color1);
-    transition: width 0.3 ease;
+    transition: width 0.3s ease-in;
 }
 nav ul li:hover::after{ 
    width: 100%; 
@@ -145,8 +145,8 @@ nav ul li:hover::after{
     
 }
 .area-icon--social {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
     margin-right: 1rem;
     background: var(--secundary-color2);
     border-radius: 100%;
@@ -165,22 +165,38 @@ nav ul li:hover::after{
 }
 .section--techs{
     display: flex;
-    gap: 3rem;
     padding: auto;
 }
 .area-techs{
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 52rem;
+
+    margin-right: 3rem;
     border: 3px solid var(--secundary-color2);
     border-radius: 20px;
     padding: 2rem;
 }
+.area-techs::before{
+    content: "Techs stack";
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--primary-color);
+    top: -5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .area-techs--item img{
     width: 100%;
-    filter: saturate(15%);
+    filter:drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.0));    
+    transition: filter 1s ease;
+    transition: transform 1s ease;
 }   .area-techs--item img:hover{
-       filter: saturate(100%); 
+     filter:drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+     transform: scale(1.1);  
 }
 .area-techs--item{
  width: 10rem;
@@ -193,12 +209,25 @@ nav ul li:hover::after{
     color: #fff;
 }
 .skills{
-    max-width: 25rem;
+    position: relative;
+    min-width: 20rem;
+    max-width: 100%;
     border: 3px solid var(--secundary-color2);
     border-radius: 20px;
     padding: 2rem; 
     color: #fff;
     align-content: center;
+}
+.skills::before{
+    content: "Certificados";
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--primary-color);
+    top: -5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .skills .skills--item {
     margin-bottom: 2rem;
@@ -211,12 +240,53 @@ nav ul li:hover::after{
     font-size: 1.2rem ;
     font-weight: 600; 
 }
+.section-project{
+    flex-direction: column;
+}
+.section-project .area-title{
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 3rem;
+}
+.area-project{
+    display: flex;
+    max-width: 60rem;
+}
+.area-project--left{
+    flex: 4;
+    padding-top: 2rem;
+    padding-right: 2rem;
+}
+.area-project--left h4{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: #fff;
+
+}
+.area-project--left p{
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.area-project--right{
+    flex: 6;
+}
+.area-project--right img{
+    width: 100%;
+    filter: drop-shadow(-20px 20px var(--secundary-color2)); 
+    aspect-ratio: 16/9;
+    object-fit:fill;
+}
 
 
 
 
 /*mobile*/
-@media screen and (width < 767px){
+@media screen and (width < 769px){
     .section--default{
         padding: 1rem;
         background: var(--primary-color);
@@ -270,9 +340,10 @@ nav ul li:hover::after{
     }
     .area-techs{
         width: 100%;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 8rem);
         border-radius: 20px;
-        gap: auto;
+        margin-right: 0;
+        margin-bottom: 50px;
     }
     .area-techs--item img{
         width: 100%;
@@ -280,10 +351,40 @@ nav ul li:hover::after{
     .area-techs--item{
      width: 100%;
      padding: auto;
+     
+    }
+    .skills{
+        width: 100%;
     }
     .area-icon--social {
     width: 2.5rem;
     height: 2.5rem;
   
+}
+.section-project .area-title{
+    margin-top: 3rem;
+    font-size: 1.8rem;
+}
+.area-project{
+    flex-direction: column-reverse;
+}
+.area-project--left{
+    flex: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.area-project--right{
+    flex: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.area-project--left h4{
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.area-project--left p{
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 }
