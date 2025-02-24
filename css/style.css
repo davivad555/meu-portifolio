@@ -184,6 +184,7 @@ nav ul li:hover::after{
     color: #fff;
     font-size: 2rem;
     font-weight: 800;
+    white-space: nowrap;
     background: var(--primary-color);
     top: -5px;
     left: 50%;
